@@ -91,7 +91,7 @@ class Plugin extends AbstractPlugin
         $logger = $this->getLogger();
 
         $params = $event->getParams();
-        $logger->debug('Changing user mode', array('event' => $event));
+        $logger->debug('Changing user mode', array('params' => $params));
 
         // Disregard mode changes without both an associated channel and user
         if (!isset($params['channel']) || !isset($params['user'])) {
@@ -148,9 +148,9 @@ class Plugin extends AbstractPlugin
     public function removeUserFromChannel(UserEventInterface $event, EventQueueInterface $queue)
     {
         $logger = $this->getLogger();
-        $logger->debug('Removing user from channel', array('event' => $event));
         $connectionMask = $this->getConnectionMask($event->getConnection());
         $params = $event->getParams();
+        $logger->debug('Removing user from channel', array('params' => $params));
         $this->removeUserData(
             $connectionMask,
             explode(',', $params['channels']),
@@ -167,7 +167,7 @@ class Plugin extends AbstractPlugin
     public function removeUser(UserEventInterface $event, EventQueueInterface $queue)
     {
         $logger = $this->getLogger();
-        $logger->debug('Removing user from all channels', array('event' => $event));
+        $logger->debug('Removing user from all channels');
         $connectionMask = $this->getConnectionMask($event->getConnection());
         $this->removeUserData(
             $connectionMask,
@@ -205,12 +205,16 @@ class Plugin extends AbstractPlugin
     public function changeUserNick(UserEventInterface $event, EventQueueInterface $queue)
     {
         $logger = $this->getLogger();
-        $logger->debug('Changing user nick', array('event' => $event));
 
         $connectionMask = $this->getConnectionMask($event->getConnection());
         $old = $event->getNick();
         $params = $event->getParams();
         $new = $params['nickname'];
+        $logger->debug('Changing user nick', array(
+            'connectionMask' => $connectionMask,
+            'oldNick' => $old,
+            'newNick' => $new,
+        ));
 
         foreach (array_keys($this->modes[$connectionMask]) as $channel) {
             if (!isset($this->modes[$connectionMask][$channel][$old])) {
@@ -236,13 +240,16 @@ class Plugin extends AbstractPlugin
     public function loadUserModes(EventInterface $event, EventQueueInterface $queue)
     {
         $logger = $this->getLogger();
-        $logger->debug('Gathering initial user mode data', array('event' => $event));
 
         $connectionMask = $this->getConnectionMask($event->getConnection());
         $params = $event->getParams();
         $channel = ltrim(array_shift($params), '=*@');
         $validPrefixes = implode('', array_keys($this->prefixes));
         $pattern = '/^([' . preg_quote($validPrefixes) . ']+)(.+)$/';
+        $logger->debug('Gathering initial user mode data', array(
+            'connectionMask' => $connectionMask,
+            'channel' => $channel,
+        ));
 
         foreach ($params as $fullNick) {
             if (!preg_match($pattern, $fullNick, $match)) {
