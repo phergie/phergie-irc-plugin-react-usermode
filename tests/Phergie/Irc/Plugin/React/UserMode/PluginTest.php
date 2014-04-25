@@ -184,9 +184,9 @@ class PluginTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests removeUser().
+     * Tests removeUser() with a channel that has mode data.
      */
-    public function testRemoveUser()
+    public function testRemoveUserWithModeData()
     {
         $event = $this->getMockUserModeEvent('+', '#channel1');
         $this->plugin->changeUserMode($event, $this->queue);
@@ -194,6 +194,29 @@ class PluginTest extends \PHPUnit_Framework_TestCase
         $event = $this->getMockUserModeEvent('+', '#channel2');
         $this->plugin->changeUserMode($event, $this->queue);
 
+        $channel = '#channel1,#channel2';
+        $nick = 'nick';
+        $mode = 'o';
+        $params = array(
+            'channels' => $channel,
+        );
+        $connection = $this->getMockConnection();
+        $event = $this->getMockUserEvent();
+        Phake::when($event)->getParams()->thenReturn($params);
+        Phake::when($event)->getConnection()->thenReturn($connection);
+        Phake::when($event)->getNick()->thenReturn($nick);
+
+        $this->plugin->removeUser($event, $this->queue);
+
+        $this->assertFalse($this->plugin->userHasMode($connection, '#channel1', $nick, $mode));
+        $this->assertFalse($this->plugin->userHasMode($connection, '#channel2', $nick, $mode));
+    }
+
+    /**
+     * Tests removeUser() with a channel that does not have mode data.
+     */
+    public function testRemoveUserWithoutModeData()
+    {
         $channel = '#channel1,#channel2';
         $nick = 'nick';
         $mode = 'o';

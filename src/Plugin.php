@@ -169,11 +169,13 @@ class Plugin extends AbstractPlugin
         $logger = $this->getLogger();
         $logger->debug('Removing user from all channels');
         $connectionMask = $this->getConnectionMask($event->getConnection());
-        $this->removeUserData(
-            $connectionMask,
-            array_keys($this->modes[$connectionMask]),
-            $event->getNick()
-        );
+        if (isset($this->modes[$connectionMask])) {
+            $this->removeUserData(
+                $connectionMask,
+                array_keys($this->modes[$connectionMask]),
+                $event->getNick()
+            );
+        }
     }
 
     /**
