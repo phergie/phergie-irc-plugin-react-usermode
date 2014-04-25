@@ -24,10 +24,30 @@ See Phergie documentation for more information on
 ```php
 new \Phergie\Irc\Plugin\React\UserMode\Plugin(array(
 
+    // All configuration is optional
 
+    'prefixes' => array(
+        '@' => 'o',
+        '+' => 'v',
+    ),
 
 ))
 ```
+
+When the bot joins a channel, it receives a `343 RPL_NAMREPLY` server event
+containing user nicks prefixed with characters indicative of their respective
+channel-specific user modes.
+
+This plugin's only configuration setting allows
+[this mapping](https://github.com/phergie/phergie-irc-plugin-react-usermode/blob/6ff691a2559c02b1b37ef555fc780b131898fe8a/src/Plugin.php#L40-46)
+of prefix to user mode characters to be overridden in cases where a network
+uses non-standard mappings. The plugin's default mapping includes several
+standard prefixes, which are shown in the example above, and several commonly
+used non-standard prefixes.
+
+## Usage
+
+
 
 ## Tests
 
