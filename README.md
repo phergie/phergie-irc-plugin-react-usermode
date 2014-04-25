@@ -21,6 +21,11 @@ See Phergie documentation for more information on
 
 ## Configuration
 
+This plugin should only be enabled as a global plugin, not a
+connection-specific plugin. This minimizes memory usage of the plugin and
+reduces use cases and overall complexity for plugin developers who use this
+plugin.
+
 ```php
 new \Phergie\Irc\Plugin\React\UserMode\Plugin(array(
 
@@ -47,7 +52,63 @@ used non-standard prefixes.
 
 ## Usage
 
+```php
+use Phergie\Irc\Bot\React\PluginInterface;
+use Phergie\Irc\Bot\React\EventQueueInterface;
+use Phergie\Irc\Plugin\React\Command\CommandEvent;
 
+class FooPlugin implements PluginInterface
+{
+    protected $userMode;
+
+    public function getSubscribedEvents()
+    {
+        return array(
+            'plugin.all' => 'getUserModePlugin',
+            'command.foo' => 'handleFooCommand',
+        );
+    }
+
+    public function getUserModePlugin(array $plugins, array $connections)
+    {
+        $fitered = array_filter(
+            function($plugin) {
+                return get_class($plugin) === '\Phergie\Irc\Plugin\React\UserMode\Plugin';
+            },
+            $plugins
+        );
+
+        if (!$filtered) {
+            throw new \RuntimeException('This plugin requires the UserMode plugin');
+        }
+
+        $this->userMode = reset($filtered);
+    }
+
+    public function handleFooCommand(CommandEvent $event, EventQueueInterface $queue)
+    {
+        $connection = $event->getConnection();
+        $nick = $event->getNick();
+        $params = $event->getParams();
+        $source = $event->getCommand() === 'PRIVMSG'
+            ? $params['receivers']
+            : $params['nickname'];
+
+        // Ignore events sent directly to the bot rather than to a channel
+        if ($connection->getNickname() === $source) {
+            return;
+        }
+
+        // Don't process the command if the user is not a channel operator
+        if (!$this->userMode->userHasMode($connection, $source, $nick, 'o')) {
+            return;
+        }
+
+        // The user is a channel operator, continue processing the command
+        // ...
+    }
+}
+```
 
 ## Tests
 
