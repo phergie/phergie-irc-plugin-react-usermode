@@ -55,7 +55,7 @@ use Phergie\Irc\Plugin\React\Command\CommandEvent;
 class FooPlugin implements PluginInterface
 {
     /**
-     * @var \Phergie\Irc\Plugin\React\EventMode\Plugin
+     * @var \Phergie\Irc\Plugin\React\UserMode\Plugin
      */
     protected $userMode;
 
