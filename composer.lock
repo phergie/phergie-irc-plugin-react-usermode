@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "359105cf7aafbc9e832cec8cd4365eca",
+    "hash": "8ade97f71af0a71d95ba4a94aebf79a4",
     "packages": [
         {
             "name": "evenement/evenement",
@@ -118,25 +118,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phergie/phergie-irc-bot-react.git",
-                "reference": "a966fe2c0cda221f2b6ee1faf6a62eac076ce1a7"
+                "reference": "4866ac426ac31fc94b48bdc520698b856517088b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phergie/phergie-irc-bot-react/zipball/a966fe2c0cda221f2b6ee1faf6a62eac076ce1a7",
-                "reference": "a966fe2c0cda221f2b6ee1faf6a62eac076ce1a7",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-bot-react/zipball/4866ac426ac31fc94b48bdc520698b856517088b",
+                "reference": "4866ac426ac31fc94b48bdc520698b856517088b",
                 "shasum": ""
             },
             "require": {
                 "evenement/evenement": "1.0.*",
                 "monolog/monolog": "1.6.*",
                 "phergie/phergie-irc-client-react": "dev-master",
-                "phergie/phergie-irc-connection": "1.1.*",
+                "phergie/phergie-irc-connection": "dev-master",
                 "phergie/phergie-irc-event": "dev-master",
                 "php": ">=5.3.3"
             },
             "require-dev": {
                 "phake/phake": "1.0.*",
-                "phpunit/phpunit": "4.0.*"
+                "phpunit/phpunit": "4.1.*"
             },
             "bin": [
                 "bin/phergie"
@@ -157,7 +157,7 @@
                 "irc",
                 "react"
             ],
-            "time": "2014-04-23 03:01:33"
+            "time": "2014-05-04 22:11:08"
         },
         {
             "name": "phergie/phergie-irc-client-react",
@@ -165,17 +165,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phergie/phergie-irc-client-react.git",
-                "reference": "0543b652f2fbfcdb74041da38629764e2a8544bc"
+                "reference": "1a15b3618db5140a25a51a1d30a433eb19cf6850"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phergie/phergie-irc-client-react/zipball/0543b652f2fbfcdb74041da38629764e2a8544bc",
-                "reference": "0543b652f2fbfcdb74041da38629764e2a8544bc",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-client-react/zipball/1a15b3618db5140a25a51a1d30a433eb19cf6850",
+                "reference": "1a15b3618db5140a25a51a1d30a433eb19cf6850",
                 "shasum": ""
             },
             "require": {
                 "monolog/monolog": "1.6.*",
-                "phergie/phergie-irc-connection": "1.1.*",
+                "phergie/phergie-irc-connection": "dev-master",
                 "phergie/phergie-irc-generator": "1.2.*",
                 "phergie/phergie-irc-parser": "1.3.*",
                 "php": ">=5.3.3",
@@ -184,8 +184,8 @@
                 "react/stream": "0.3.*"
             },
             "require-dev": {
-                "phake/phake": "2.0.0-alpha4",
-                "phpunit/phpunit": "3.7.*"
+                "phake/phake": "2.0.0-beta1",
+                "phpunit/phpunit": "4.1.*"
             },
             "type": "library",
             "autoload": {
@@ -203,29 +203,32 @@
                 "irc",
                 "react"
             ],
-            "time": "2014-04-23 01:26:43"
+            "time": "2014-05-04 19:40:36"
         },
         {
             "name": "phergie/phergie-irc-connection",
-            "version": "1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phergie/phergie-irc-connection.git",
-                "reference": "96521084b6931df13cbcd77a40f9fd7c4cd79d18"
+                "reference": "43babe11f0d2649bf34a93a2d4bc48d37f07b5d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phergie/phergie-irc-connection/zipball/96521084b6931df13cbcd77a40f9fd7c4cd79d18",
-                "reference": "96521084b6931df13cbcd77a40f9fd7c4cd79d18",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-connection/zipball/43babe11f0d2649bf34a93a2d4bc48d37f07b5d7",
+                "reference": "43babe11f0d2649bf34a93a2d4bc48d37f07b5d7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.*"
+            },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Phergie": "src"
+                "psr-4": {
+                    "Phergie\\Irc\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -239,7 +242,7 @@
                 "irc",
                 "server"
             ],
-            "time": "2013-07-15 16:35:58"
+            "time": "2014-05-04 19:37:24"
         },
         {
             "name": "phergie/phergie-irc-event",
@@ -247,20 +250,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phergie/phergie-irc-event.git",
-                "reference": "2b4ed6077cd89a054131b389a8a7753478071b53"
+                "reference": "8390edc64d470922a3dba8c2d70ba8941c5b87ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phergie/phergie-irc-event/zipball/2b4ed6077cd89a054131b389a8a7753478071b53",
-                "reference": "2b4ed6077cd89a054131b389a8a7753478071b53",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-event/zipball/8390edc64d470922a3dba8c2d70ba8941c5b87ec",
+                "reference": "8390edc64d470922a3dba8c2d70ba8941c5b87ec",
                 "shasum": ""
             },
             "require": {
-                "phergie/phergie-irc-connection": "1.1.*",
+                "phergie/phergie-irc-connection": "dev-master",
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.0.*"
+                "phake/phake": "2.0.0-beta1",
+                "phpunit/phpunit": "4.1.*"
             },
             "type": "library",
             "autoload": {
@@ -277,7 +281,7 @@
                 "event",
                 "irc"
             ],
-            "time": "2014-04-15 13:07:23"
+            "time": "2014-05-04 19:44:23"
         },
         {
             "name": "phergie/phergie-irc-generator",
@@ -482,20 +486,20 @@
     "packages-dev": [
         {
             "name": "phake/phake",
-            "version": "1.0.x-dev",
+            "version": "v2.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlively/Phake.git",
-                "reference": "76fc7fd9d81d3b43cb65a099dfd2972270070e47"
+                "reference": "d9732d7d1ffc65e86856e00eca5f3025b3f29442"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlively/Phake/zipball/76fc7fd9d81d3b43cb65a099dfd2972270070e47",
-                "reference": "76fc7fd9d81d3b43cb65a099dfd2972270070e47",
+                "url": "https://api.github.com/repos/mlively/Phake/zipball/d9732d7d1ffc65e86856e00eca5f3025b3f29442",
+                "reference": "d9732d7d1ffc65e86856e00eca5f3025b3f29442",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.0"
+                "php": ">=5.3.3"
             },
             "require-dev": {
                 "doctrine/common": "2.3.*",
@@ -503,18 +507,24 @@
                 "hamcrest/hamcrest-php": "1.1.*",
                 "phpunit/phpunit": "3.7.*"
             },
+            "suggest": {
+                "doctrine/common": "Allows mock annotations to use import statements for classes.",
+                "hamcrest/hamcrest-php": "Use Hamcrest matchers."
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
             "autoload": {
-                "classmap": [
-                    "src"
-                ]
+                "psr-0": {
+                    "Phake": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                "src"
-            ],
             "license": [
-                "BSD"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -528,7 +538,7 @@
                 "mock",
                 "testing"
             ],
-            "time": "2014-04-19 22:17:47"
+            "time": "2014-04-19 19:26:56"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -536,29 +546,30 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "aef655b2481c7ef8c8b73288c383261b2bb7e2a2"
+                "reference": "bccecf50645068b44f49a84009e2a0499a500b99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/aef655b2481c7ef8c8b73288c383261b2bb7e2a2",
-                "reference": "aef655b2481c7ef8c8b73288c383261b2bb7e2a2",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/bccecf50645068b44f49a84009e2a0499a500b99",
+                "reference": "bccecf50645068b44f49a84009e2a0499a500b99",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "phpunit/php-file-iterator": "~1.3.1",
-                "phpunit/php-text-template": "~1.2",
+                "phpunit/php-text-template": "~1.2.0",
                 "phpunit/php-token-stream": "~1.2.2",
-                "sebastian/environment": "~1.0",
+                "sebastian/environment": "~1.0.0",
                 "sebastian/version": "~1.0.3"
             },
             "require-dev": {
                 "ext-xdebug": ">=2.1.4",
-                "phpunit/phpunit": ">=4.0.0,<4.1.0"
+                "phpunit/phpunit": "~4.0.14"
             },
             "suggest": {
                 "ext-dom": "*",
-                "ext-xdebug": ">=2.2.1"
+                "ext-xdebug": ">=2.2.1",
+                "ext-xmlwriter": "*"
             },
             "type": "library",
             "extra": {
@@ -592,7 +603,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-04-03 03:26:47"
+            "time": "2014-04-30 09:01:21"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -779,39 +790,38 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.0.x-dev",
+            "version": "4.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a8d628ee246265b8dbcd839304c41b8839783581"
+                "reference": "6143b5e6957e0e26df9aaca8946bbdca5e83b4b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a8d628ee246265b8dbcd839304c41b8839783581",
-                "reference": "a8d628ee246265b8dbcd839304c41b8839783581",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6143b5e6957e0e26df9aaca8946bbdca5e83b4b2",
+                "reference": "6143b5e6957e0e26df9aaca8946bbdca5e83b4b2",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
+                "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "php": ">=5.3.3",
-                "phpunit/php-code-coverage": ">=2.0.0,<2.1.0",
+                "phpunit/php-code-coverage": "~2.0",
                 "phpunit/php-file-iterator": "~1.3.1",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "~1.0.2",
-                "phpunit/phpunit-mock-objects": ">=2.0.0,<2.1.0",
+                "phpunit/phpunit-mock-objects": "~2.1",
+                "sebastian/comparator": "~1.0",
                 "sebastian/diff": "~1.1",
                 "sebastian/environment": "~1.0",
-                "sebastian/exporter": "~1.0.1",
-                "sebastian/version": "~1.0.3",
+                "sebastian/exporter": "~1.0",
+                "sebastian/version": "~1.0",
                 "symfony/yaml": "~2.0"
             },
             "suggest": {
-                "ext-json": "*",
-                "ext-simplexml": "*",
-                "ext-tokenizer": "*",
                 "phpunit/php-invoker": "~1.1"
             },
             "bin": [
@@ -820,7 +830,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0.x-dev"
+                    "dev-master": "4.1.x-dev"
                 }
             },
             "autoload": {
@@ -850,20 +860,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-04-24 07:55:55"
+            "time": "2014-05-04 09:20:34"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.0.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "ade8e1b47b3252e29bf7721675fc71eac586d088"
+                "reference": "bbc1aa16d02273790a2106e3385cc0efeb6a18cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/ade8e1b47b3252e29bf7721675fc71eac586d088",
-                "reference": "ade8e1b47b3252e29bf7721675fc71eac586d088",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/bbc1aa16d02273790a2106e3385cc0efeb6a18cb",
+                "reference": "bbc1aa16d02273790a2106e3385cc0efeb6a18cb",
                 "shasum": ""
             },
             "require": {
@@ -871,7 +881,7 @@
                 "phpunit/php-text-template": "~1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=4.0.0,<4.1.0"
+                "phpunit/phpunit": "4.2.*@dev"
             },
             "suggest": {
                 "ext-soap": "*"
@@ -879,7 +889,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "2.2.x-dev"
                 }
             },
             "autoload": {
@@ -907,7 +917,72 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-04-22 09:49:58"
+            "time": "2014-05-04 09:39:30"
+        },
+        {
+            "name": "sebastian/comparator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/comparator.git",
+                "reference": "9acfeaa92132325252efd9e973cd47e157d4c773"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/9acfeaa92132325252efd9e973cd47e157d4c773",
+                "reference": "9acfeaa92132325252efd9e973cd47e157d4c773",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "sebastian/diff": "~1.1",
+                "sebastian/exporter": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                },
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@2bepublished.at"
+                }
+            ],
+            "description": "Provides the functionality to compare PHP values for equality",
+            "homepage": "http://www.github.com/sebastianbergmann/comparator",
+            "keywords": [
+                "comparator",
+                "compare",
+                "equality"
+            ],
+            "time": "2014-05-04 09:14:18"
         },
         {
             "name": "sebastian/diff",
@@ -965,19 +1040,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "79517609ec01139cd7e9fded0dd7ce08c952ef6a"
+                "reference": "10c7467da0622f7848cc5cadc0828c3359254df4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/79517609ec01139cd7e9fded0dd7ce08c952ef6a",
-                "reference": "79517609ec01139cd7e9fded0dd7ce08c952ef6a",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/10c7467da0622f7848cc5cadc0828c3359254df4",
+                "reference": "10c7467da0622f7848cc5cadc0828c3359254df4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.0.*@dev"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "extra": {
@@ -1008,7 +1083,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2014-02-18 16:17:19"
+            "time": "2014-05-04 17:56:05"
         },
         {
             "name": "sebastian/exporter",
@@ -1016,12 +1091,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "13e2857ac9208f9ded1f3e524de2c9b5a4a4db6f"
+                "reference": "7a263d87de6584fd5f129308b96e46ceba12c9dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/13e2857ac9208f9ded1f3e524de2c9b5a4a4db6f",
-                "reference": "13e2857ac9208f9ded1f3e524de2c9b5a4a4db6f",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/7a263d87de6584fd5f129308b96e46ceba12c9dc",
+                "reference": "7a263d87de6584fd5f129308b96e46ceba12c9dc",
                 "shasum": ""
             },
             "require": {
@@ -1074,7 +1149,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2014-04-18 09:45:21"
+            "time": "2014-05-04 09:43:29"
         },
         {
             "name": "sebastian/version",
