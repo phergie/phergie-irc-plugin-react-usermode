@@ -392,11 +392,11 @@ class PluginTest extends \PHPUnit_Framework_TestCase
     /**
      * Returns a mock connection.
      *
-     * @return \Phergie\Irc\Bot\React\ConnectionInterface
+     * @return \Phergie\Irc\ConnectionInterface
      */
     protected function getMockConnection()
     {
-        $connection = Phake::mock('\Phergie\Irc\Bot\React\ConnectionInterface');
+        $connection = Phake::mock('\Phergie\Irc\ConnectionInterface');
         Phake::when($connection)->getNickname()->thenReturn('cnickname');
         Phake::when($connection)->getUsername()->thenReturn('cusername');
         Phake::when($connection)->getServerHostname()->thenReturn('chostname');
