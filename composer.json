@@ -11,7 +11,7 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "phergie/phergie-irc-bot-react": "~1"
+        "phergie/phergie-irc-bot-react": "~2"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.*",
