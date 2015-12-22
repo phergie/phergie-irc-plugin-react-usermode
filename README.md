@@ -11,7 +11,7 @@ The recommended method of installation is [through composer](http://getcomposer.
 ```JSON
 {
     "require": {
-        "phergie/phergie-irc-plugin-react-usermode": "dev-master"
+        "phergie/phergie-irc-plugin-react-usermode": "~2"
     }
 }
 ```
