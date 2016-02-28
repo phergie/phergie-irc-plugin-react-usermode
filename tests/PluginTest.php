@@ -295,14 +295,19 @@ class PluginTest extends \PHPUnit_Framework_TestCase
     {
         $channel = '#channel';
         $params = array(
-            $channelPrefix . $channel,
-            '~owner',
-            '&admin',
-            '@op',
-            '%halfop',
-            '+voice',
-            '&@multi',
-            'regular',
+            $channelPrefix,
+            $channel,
+            '~owner &admin @op %halfop +voice &@multi regular',
+            'iterable' => array(
+                '~owner',
+                '&admin',
+                '@op',
+                '%halfop',
+                '+voice',
+                '&@multi',
+                'regular',
+            ),
+            'tail' => '~owner &admin @op %halfop +voice &@multi regular',
         );
         $event = $this->getMockEvent();
         $connection = $this->getMockConnection();
@@ -327,8 +332,13 @@ class PluginTest extends \PHPUnit_Framework_TestCase
     {
         $channel = '#channel';
         $params = array(
-            '=' . $channel,
+            '=',
+            $channel,
             '$unsupported',
+            'iterable' => array(
+                '$unsupported',
+            ),
+            'tail' => '$unsupported',
         );
         $event = $this->getMockEvent();
         $connection = $this->getMockConnection();
@@ -347,8 +357,13 @@ class PluginTest extends \PHPUnit_Framework_TestCase
     {
         $channel = '#channel';
         $params = array(
-            '=' . $channel,
+            '=',
+            $channel,
             '$unsupported',
+            'iterable' => array(
+                '$unsupported',
+            ),
+            'tail' => '$unsupported',
         );
         $event = $this->getMockEvent();
         $connection = $this->getMockConnection();

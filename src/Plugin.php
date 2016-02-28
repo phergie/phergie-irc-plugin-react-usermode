@@ -245,7 +245,7 @@ class Plugin extends AbstractPlugin
 
         $connectionMask = $this->getConnectionMask($event->getConnection());
         $params = $event->getParams();
-        $channel = ltrim(array_shift($params), '=*@');
+        $channel = $params[1];
         $validPrefixes = implode('', array_keys($this->prefixes));
         $pattern = '/^([' . preg_quote($validPrefixes) . ']+)(.+)$/';
         $logger->debug('Gathering initial user mode data', array(
@@ -253,7 +253,7 @@ class Plugin extends AbstractPlugin
             'channel' => $channel,
         ));
 
-        foreach ($params as $fullNick) {
+        foreach ($params['iterable'] as $fullNick) {
             if (!preg_match($pattern, $fullNick, $match)) {
                 continue;
             }
